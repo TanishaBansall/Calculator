@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>Calculator</title>
+<link rel="stylesheet" href="css/calculator.css">
+
+</head>
+<body style="background-color: gray;">
+
+<table border="1px">
+<div class="d">
+
+     
+
+   <input type="text" placeholder="0" class="sc" style="width:85%;padding:20px;border-radius:10px;margin-left:7%;text-align:right;">
+   
+<br><br>
+<center>
+<button id="pie" value="pie" class="button2 space">pie</button>
+         <button id="ClearAll" type="reset" value="CE" class="clean button2" style="padding:10px 28px;">CE</button>
+          <button id="Clear" type="reset" value="<-" class="clean button2" style="padding:10px 28px;"><-</button>
+
+          <button id="Add" type="button" value="+" class="operators operand button2">+</button>
+       
+        <br>
+<button id="sin" value="sin" class="button2 space">sin</button>
+          <button id="One" type="button" value="1" class="Show button2 digit">1</button>
+           <button id="Two" type="button" value="2" class="Show button2 digit">2</button>
+            <button id="Three" type="button" value="3" class="Show button2 digit">3</button>
+           <button id="Sub" type="button" value="-" class="operators operand button2">-</button>
+        <br>
+<button id="cos" value="cos" class="button2 space" style="padding:10px 18px;">cos</button>
+           <button id="Four" type="button" value="4" class="Show button2 digit">4</button>
+            <button id="Five" type="button" value="5" class="Show button2 digit">5</button>
+            <button id="six" type="button" value="6" class="Show button2 digit">6</button>
+            <button id="Mul" type="button" value="*" class="operators operand button2">*</button>
+        <br>
+<button id="tan" value="tan" class="button2 space">tan</button>
+            <button id="Seven" type="button" value="7" class="Show button2 digit">7</button>
+            <button id="Eight" type="button" value="8" class="Show button2 digit">8</button>
+            <button id="Nine" type="button" value="9" class="Show button2 digit">9</button>
+            <button id="Divide" type="button" value="/" class="operators operand button2">/</button>
+        <br>
+<button id="log" value="log" class="button2 space">log</button>
+<button id="Dot" type="button" value="." class="Show button2 digit" style=" padding: 10px 23px;">.</button>           
+ <button id="Zero" type="button" value="0" class="Show button2 digit">0</button>
+          
+<button id="exp" value="^" class="button2">^</button>
+
+            <button id="equal" type="button" value="=" class="operand button2" style=" padding: 10px 17px;">=</button>
+</center>
+ </div>
+</table>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+
+<script>
+$(document).ready(function(){
+
+$(".digit").click(function(){
+var a=$(this).val();
+$(".sc").val($(".sc").val()+a);
+});
+
+$(".operators").click(function(){
+var b=$(this).val();
+$(".sc").val($(".sc").val()+b);
+});
+
+$("#ClearAll").click(function(){
+$(".sc").val(null);
+});
+
+$("#equal").click(function(){
+$(".sc").val(eval($(".sc").val()));
+});
+
+$("#sin").click(function(){
+$(".sc").val(Math.sin($(".sc").val()));
+});
+
+$("#cos").click(function(){
+$(".sc").val(Math.cos($(".sc").val()));
+});
+
+$("#tan").click(function(){
+$(".sc").val(Math.tan($(".sc").val()));
+});
+
+$("#pie").click(function(){
+   a=$(".sc").val();
+$(".sc").val(eval(a*3.14));
+  });
+
+$("#log").click(function(){
+    $(".sc").val(Math.log($(".sc").val()));
+  });
+
+$("#Clear").click(function(){
+var num=$(".sc").val();
+   num=num.substring(0, num.length-1);
+$(".sc").val(num);
+  });
+
+$("#exp").click(function(){
+    $(".sc").val(Math.pow($(".sc").val(),2));
+  });
+  
+});
+
+</script>
+</html>
